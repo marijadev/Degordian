@@ -1,0 +1,88 @@
+#offers {
+    padding: 140px $side-padding 0;
+
+    @media screen and (max-width: 768px) {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        margin-top: 65px;
+        margin-bottom: 25px;
+        text-align: center;
+
+        @media screen and (max-width: 768px) {
+            text-align: left;
+            padding: 0 30px;
+        }
+    }
+
+    .section-description {
+        margin: 0 auto 80px;
+        max-width: 50%;
+        text-align: center;
+
+        @media screen and (max-width: 768px) {
+            margin: 0 0 50px;
+            max-width: 100%;
+            padding: 0 30px;
+            text-align: left;
+        }
+    }
+
+    .call-to-action {
+        text-align: center;
+    }
+}
+
+.uncover-right {
+    text-align: center;
+}
+
+#services {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        padding: 0 30px;
+    }
+}
+
+.service {
+    max-width: 300px;
+    text-align: left;
+
+    img {
+        height: 80px;
+    }
+
+    @media screen and (max-width: 768px) {
+        &:last-child {
+            .service-description {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.service-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    line-height: 1.12em;
+    font-size: 2.28rem;
+    color: $color-dark;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 1.57rem;
+    }
+}
+
+.service-description {
+    margin-bottom: 50px;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: $color-middle-grey;
+}

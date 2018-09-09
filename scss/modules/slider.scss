@@ -1,0 +1,186 @@
+#hero-slider {
+    position: relative;
+}
+
+.hero-slide {
+    position: relative;
+
+    @media screen and (min-width: 769px) {
+        max-height: calc(100vh - 47px);
+    }
+
+    @media screen and (max-width: 768px) {
+        min-height: 100vh;
+    }
+}
+
+.hero-slide-image {
+    visibility: hidden;
+}
+
+.hero-slide-image-copy {
+    @extend %abs;
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+        content: '';
+        @extend %abs;
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 0) 52%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 0) 52%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 0) 52%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+        /* IE6-9 */
+    }
+
+    &:after {
+        content: '';
+        @extend %abs;
+        background-color: rgba(0, 0, 0, .3);
+    }
+}
+
+.hero-slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @extend %abs;
+    padding: 0 $side-padding;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 50px 0 30px;
+    }
+}
+
+.hero-slide-content-inner {
+    padding: $side-padding;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
+}
+
+.hs-tagline {
+    display: inline-block;
+    padding: 7px 13px;
+    background-color: $color-red;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: 0.140em;
+    text-transform: uppercase;
+    color: $color-white;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.hs-title {
+    margin: 45px 0 35px 0;
+    font-size: 4.07rem;
+    line-height: 1;
+    color: $color-white;
+
+    @media screen and (max-width: 768px) {
+        font-size: 2.35rem;
+        margin: 45px 0 20px 0;
+    }
+}
+
+.hs-description {
+    font-family: HelveticaNeueLight;
+    margin-bottom: 50px;
+    max-width: 36%;
+    font-size: 1.28rem;
+    line-height: 1.5;
+    color: $color-white;
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+        line-height: 1.57em;
+        font-size: 1rem;
+    }
+}
+
+#hs-nav-left {
+    @extend %slide-navigation;
+    left: 50px;
+
+    svg {
+        height: 26px;
+        fill: $color-white;
+        transform: rotate(180deg);
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+#hs-nav-right {
+    @extend %slide-navigation;
+    right: 50px;
+
+    svg {
+        height: 26px;
+        fill: $color-white;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+#hs-nav-bullets {
+    position: absolute;
+    right: 24%;
+    bottom: 19%;
+    z-index: 1000;
+
+    .swiper-pagination-bullet {
+        @extend %swiper-bullet;
+        background-color: #ffffff;
+
+        &.swiper-pagination-bullet-active {
+            background-color: $color-red;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+#hs-scroll-down {
+    position: absolute;
+    bottom: 75px;
+    left: calc(50% - 16px);
+    z-index: 100;
+
+    .btn {
+        padding: 15px;
+    }
+
+    .btn-icon {
+        margin: 0;
+    }
+
+    svg {
+        height: 15px;
+        transform: rotate(90deg);
+        transition: transform .3s;
+    }
+
+    &:hover {
+        svg {
+            transform: rotate(90deg) translateX(6px);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
